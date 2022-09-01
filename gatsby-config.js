@@ -6,7 +6,7 @@ module.exports = {
             summary: `who lives and works in Hong Kong building useful things on web.`
         },
         description: ``,
-        siteUrl: `https://www.lazehang.com/`,
+        siteUrl: `https://www.lazehang.com`,
         social: {}
     },
     plugins: [
@@ -162,6 +162,9 @@ module.exports = {
 
                 enableWebVitalsTracking: true
             }
+        },
+        {
+            resolve: 'gatsby-plugin-sitemap'
         }
     ]
 }
