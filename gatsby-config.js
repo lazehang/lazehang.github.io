@@ -142,10 +142,13 @@ module.exports = {
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
         {
-            resolve: `gatsby-plugin-google-fonts`,
+            resolve: `gatsby-plugin-google-fonts-v2`,
             options: {
-                fonts: [`poppins\:400,600,900`],
-                display: 'swap'
+                fonts: [
+                    {
+                        family: `Poppins:wght@400;600;900`
+                    }
+                ]
             }
         },
         {
