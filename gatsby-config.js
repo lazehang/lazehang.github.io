@@ -5,7 +5,7 @@ module.exports = {
             name: `Mangal Hang Limbu`,
             summary: `who lives and works in Hong Kong building useful things on web.`
         },
-        description: ``,
+        description: `Mangal Hang Limbu / lazehang's personal website.`,
         siteUrl: `https://www.lazehang.com`,
         social: {}
     },
