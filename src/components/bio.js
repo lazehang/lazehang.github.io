@@ -96,12 +96,12 @@ const Bio = () => {
                         .
                     </p>
                     <a
-                        href="/Resume-Mangal-Limbu.pdf"
+                        href="/resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block p-3 border border-black rounded text-black font-semibold"
+                        className="inline-block px-3 py-2 border border-black rounded text-black font-semibold"
                     >
-                        Checkout My Resume
+                        Checkout Resume
                     </a>
                 </div>
             )}
