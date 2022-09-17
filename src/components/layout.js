@@ -7,12 +7,12 @@ const Layout = ({ location, children }) => {
 
     return (
         <div
-            className="max-w-[1024px] mx-auto p-5 min-h-screen flex flex-col"
+            className="max-w-[1024px] mx-auto pb-0 md:p-5 p-5 min-h-screen flex flex-col"
             data-is-root-path={isRootPath}
         >
             <Nav />
             <main className="m-auto">{children}</main>
-            <footer className="mt-auto text-center">
+            <footer className="mt-auto text-center mb-0">
                 <div className="space-x-4">
                     <a
                         href="https://hk.linkedin.com/in/mangal-limbu-05a951111"

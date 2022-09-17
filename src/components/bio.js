@@ -8,7 +8,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-
+import GridImage from './gridImage'
 const Bio = () => {
     const data = useStaticQuery(graphql`
         query BioQuery {
@@ -30,34 +30,8 @@ const Bio = () => {
     const author = data.site.siteMetadata?.author
 
     return (
-        <div className="grid md:grid-cols-2 gap-10 items-center justify-center md:py-10">
-            <div className="md:order-2 relative grid grid-cols-8 grid-rows-6">
-                <StaticImage
-                    src="../images/profile-pic.jpg"
-                    width={700}
-                    height={700}
-                    alt="Profile picture"
-                    className="rounded-[20px] col-start-2 col-span-6 row-start-2 row-span-4"
-                />
-                <StaticImage
-                    src="../images/portfolio/spotlight.jpg"
-                    width={700}
-                    alt="spotlight studio hk"
-                    className="rounded-md col-start-1 col-span-2 row-start-1 row-span-2"
-                />
-                <StaticImage
-                    src="../images/portfolio/getbarcode.jpg"
-                    width={700}
-                    alt="getbarcode"
-                    className="rounded-md col-start-6 col-end-9 row-start-3"
-                />
-                <StaticImage
-                    src="../images/portfolio/dibyadristy.jpg"
-                    width={700}
-                    alt="Dibya dristy"
-                    className="rounded-md col-start-4 col-span-5 row-start-5 row-span-2 mr-4"
-                />
-            </div>
+        <div className="grid md:grid-cols-2 gap-10 items-center justify-center pb-10 md:py-10">
+            <GridImage className="md:order-2" />
             {author?.name && (
                 <div className="md:order-1 bg-white">
                     <h1 className="mt-0">
@@ -66,7 +40,7 @@ const Bio = () => {
                     <p className="max-w-lg pb-2 mb-0">
                         {author?.summary || null}
                     </p>
-                    <p className="max-w-lg pb-2">
+                    <p className="max-w-lg">
                         I specialize in building ⚡️ blazing fast, 📉 data
                         driven web solutions. You can connect with me on{' '}
                         <a
@@ -95,14 +69,42 @@ const Bio = () => {
                         </a> */}
                         .
                     </p>
-                    <a
-                        href="/resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block px-3 py-2 border border-black rounded text-black font-semibold"
-                    >
-                        Checkout Resume
-                    </a>
+                    <div className="mt-16 md:mt-0 text-center md:text-left max-w-xs mx-auto md:mx-0">
+                        <div className="text-left text-sm pb-1 pr-4 border-black font-semibold">
+                            Got a project?
+                        </div>
+                        <a
+                            href="mailto:hello@lazehang.com"
+                            className="text-base text-center block mx-auto md:inline-block px-6 py-2 border border-black text-white bg-black font-semibold "
+                        >
+                            Connect with me{' '}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-5 h-5 inline-block"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                    <div className="text-center md:text-left">
+                        <span className="text-sm">or </span>
+                        <a
+                            href="/resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 text-sm underline inline-block font-semibold"
+                        >
+                            Checkout resume
+                        </a>
+                    </div>
                 </div>
             )}
         </div>
