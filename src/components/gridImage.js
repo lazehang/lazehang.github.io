@@ -15,7 +15,7 @@ export default function gridImage({ className = '' }) {
                 href="https://www.spotlightstudiohk.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md col-start-1 col-span-2 row-start-1 row-span-2"
+                className="rounded-md col-start-1 col-span-2 row-start-1 row-span-2 overflow-hidden"
             >
                 <StaticImage
                     src="../images/portfolio/spotlight.jpg"
@@ -27,7 +27,7 @@ export default function gridImage({ className = '' }) {
                 href="https://getbarcode.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md col-start-6 col-end-9 row-start-3"
+                className="rounded-md col-start-6 col-end-9 row-start-3 overflow-hidden"
             >
                 <StaticImage
                     src="../images/portfolio/getbarcode.jpg"
@@ -35,18 +35,12 @@ export default function gridImage({ className = '' }) {
                     alt="getbarcode"
                 />
             </a>
-            <a
-                href="https://dibyadristy.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
+            <StaticImage
+                src="../images/portfolio/dibyadristy.jpg"
+                width={700}
+                alt="Dibya dristy"
                 className="rounded-md col-start-4 col-span-5 row-start-5 row-span-2 mr-4"
-            >
-                <StaticImage
-                    src="../images/portfolio/dibyadristy.jpg"
-                    width={700}
-                    alt="Dibya dristy"
-                />
-            </a>
+            />
         </div>
     )
 }

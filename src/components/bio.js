@@ -7,7 +7,6 @@
 
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import GridImage from './gridImage'
 const Bio = () => {
     const data = useStaticQuery(graphql`
@@ -31,7 +30,10 @@ const Bio = () => {
 
     return (
         <div className="grid md:grid-cols-2 gap-10 items-center justify-center pb-10 md:py-10">
-            <GridImage className="md:order-2" />
+            <div className="md:order-2 relative">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full h-[75%] w-[95%] bg-gradient-to-r to-[#3730a3] via-yellow-100 from-[#e8ce69] shadow-md" />
+                <GridImage />
+            </div>
             {author?.name && (
                 <div className="md:order-1 bg-white">
                     <h1 className="mt-0">
