@@ -16,7 +16,7 @@ export default function gridImage({ className = '' }) {
                 href="https://www.spotlightstudiohk.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="col-start-1 col-span-2 row-start-1 row-span-2 overflow-hidden"
+                className="col-start-7 col-span-2 row-start-1 row-span-2 overflow-hidden"
             >
                 <StaticImage
                     src="../images/portfolio/spotlight.jpg"
@@ -29,7 +29,7 @@ export default function gridImage({ className = '' }) {
                 href="https://getbarcode.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md col-start-6 col-end-9 row-start-3 overflow-hidden"
+                className="rounded-md col-start-1 col-end-4 row-start-3 overflow-hidden"
             >
                 <StaticImage
                     src="../images/portfolio/getbarcode.jpg"
