@@ -5,13 +5,12 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-const BlogIndex = ({ data, location }) => {
+const Index = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
-    const posts = data.allMarkdownRemark.nodes
+    // const posts = data.allMarkdownRemark.nodes
 
     return (
         <Layout location={location} title={siteTitle}>
-            <Seo title="Home" />
             <Bio />
             {/* <div>
         <h2>Latest Articles</h2>
@@ -77,7 +76,9 @@ const BlogIndex = ({ data, location }) => {
     )
 }
 
-export default BlogIndex
+export const Head = () => <Seo title="Home" />
+
+export default Index
 
 export const pageQuery = graphql`
     query {
@@ -86,7 +87,7 @@ export const pageQuery = graphql`
                 title
             }
         }
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
             nodes {
                 excerpt
                 fields {

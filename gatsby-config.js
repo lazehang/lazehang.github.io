@@ -101,7 +101,7 @@ module.exports = {
                         query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                 ) {
                   nodes {
                     excerpt
@@ -132,9 +132,31 @@ module.exports = {
                 background_color: `#ffffff`,
                 // This will impact how browsers show your PWA/website
                 // https://css-tricks.com/meta-theme-color-and-trickery/
-                // theme_color: `#663399`,
+                theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+                icon: `src/images/favicon_io/android-chrome-512x512.png`, // This path is relative to the root of the site.
+                icons: [
+                    {
+                        src: `src/images/favicon_io/android-chrome-192x192.png`,
+                        sizes: `192x192`,
+                        type: `image/png`
+                    },
+                    {
+                        src: `src/images/favicon_io/android-chrome-512x512.png`,
+                        sizes: `512x512`,
+                        type: `image/png`
+                    },
+                    {
+                        src: `src/images/favicon_io/favicon-32x32.png`,
+                        sizes: `32x32`,
+                        type: `image/png`
+                    },
+                    {
+                        src: `src/images/favicon_io/favicon-16x16.png`,
+                        sizes: `16x16`,
+                        type: `image/png`
+                    }
+                ]
             }
         },
         `gatsby-plugin-react-helmet`,

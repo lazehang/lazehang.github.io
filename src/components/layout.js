@@ -11,7 +11,7 @@ const Layout = ({ location, children }) => {
             data-is-root-path={isRootPath}
         >
             <Nav />
-            <main className="m-auto">{children}</main>
+            <main className="m-auto w-full">{children}</main>
             <footer className="mt-auto text-center mb-0">
                 <div className="space-x-4">
                     <a
