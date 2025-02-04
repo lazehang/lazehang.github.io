@@ -99,7 +99,7 @@ const Bio = () => {
                     <div className="text-center md:text-left">
                         <span className="text-sm">or </span>
                         <a
-                            href="/Resume-Mangal-Limbu.pdf"
+                            href="/SE_Mangal_Hang_Limbu.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-2 text-sm underline inline-block font-semibold"
