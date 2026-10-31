@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Nav from './nav'
+import { FOCUS_RING_CLASS } from '../constants/contact'
 
 const Layout = ({ location, children }) => {
     const rootPath = `${__PATH_PREFIX__}/`
@@ -7,33 +8,36 @@ const Layout = ({ location, children }) => {
 
     return (
         <div
-            className="max-w-[1024px] mx-auto pb-0 md:p-5 p-5 min-h-screen flex flex-col"
+            className="max-w-[1120px] mx-auto min-h-screen flex flex-col bg-[var(--ground)]"
+            style={{ padding: 'var(--page-margin)' }}
             data-is-root-path={isRootPath}
         >
             <Nav />
-            <main className="m-auto w-full">{children}</main>
-            <footer className="mt-auto text-center mb-0">
-                <div className="space-x-4">
+            <main className="w-full flex-1">{children}</main>
+            <footer className="mt-auto pt-12 pb-4 text-[var(--type-caption)] text-[var(--muted)]">
+                <p className="mb-0 text-center md:text-left">
+                    <span className="text-[var(--ink)] font-semibold">Mangal Hang Limbu</span>
+                    <span aria-hidden="true"> · </span>
                     <a
                         href="https://hk.linkedin.com/in/mangal-limbu-05a951111"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline font-semibold"
+                        className={`text-[var(--ink)] font-semibold ${FOCUS_RING_CLASS}`}
                     >
-                        linkedin
+                        LinkedIn
                     </a>
+                    <span aria-hidden="true"> · </span>
                     <a
                         href="https://github.com/lazehang"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline font-semibold"
+                        className={`text-[var(--ink)] font-semibold ${FOCUS_RING_CLASS}`}
                     >
-                        Github
+                        GitHub
                     </a>
-                </div>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.com">Gatsby</a>
+                    <span aria-hidden="true"> · </span>
+                    <span>© {new Date().getFullYear()}</span>
+                </p>
             </footer>
         </div>
     )

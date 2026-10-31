@@ -1,47 +1,58 @@
 import * as React from 'react'
 import SkillChip from './skillChip'
+import { FOCUS_RING_CLASS } from '../constants/contact'
 
-const ProjectCard = ({
+const ProjectLedgerEntry = ({
     title,
-    meta,
+    roleKind,
+    dates,
     sideProject = false,
     bullets,
     tech,
     liveUrl,
     repoUrl,
 }) => (
-    <article className="border border-neutral-200 rounded-lg p-6 bg-white h-full flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200">
-        <header>
-            <h3 className="mt-0 mb-2 text-xl font-semibold">{title}</h3>
-            <p className="text-sm text-neutral-600 mb-0 flex flex-wrap items-center gap-2">
-                <span>{meta}</span>
+    <article className="project-ledger-entry max-w-[var(--column)]">
+        <header className="mb-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <h3 className="mt-0 mb-0 text-[1.125rem] md:text-[1.25rem] font-semibold text-inherit">
+                    {title}
+                </h3>
+                {dates && (
+                    <span className="text-[var(--type-small)] tabular-nums text-inherit shrink-0">
+                        {dates}
+                    </span>
+                )}
+            </div>
+            <p className="text-[var(--type-small)] text-[var(--muted)] mb-0 mt-1 flex flex-wrap items-center gap-2">
+                <span>{roleKind}</span>
                 {sideProject && (
-                    <span className="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 border border-neutral-400 rounded-full">
+                    <span className="text-[var(--type-caption)] px-2.5 py-1 rounded-full bg-[var(--surface)] text-[var(--ink)]">
                         Side project
                     </span>
                 )}
             </p>
         </header>
-        <ul className="mt-4 mb-4 pl-5 list-disc flex-grow">
+        <ul className="mt-4 mb-4 pl-5 list-disc">
             {bullets.map((item, i) => (
-                <li key={i} className="mb-2 text-neutral-800">
+                <li key={i} className="mb-2 text-inherit text-[var(--type-body)]">
                     {item}
                 </li>
             ))}
         </ul>
-        <div className="mb-4 flex flex-wrap">
+        <div className="mb-3 flex flex-wrap">
             {tech.map(t => (
                 <SkillChip key={t} label={t} />
             ))}
         </div>
         {(liveUrl || repoUrl) && (
-            <div className="space-x-4 text-sm font-semibold">
+            <div className="space-x-4 text-[var(--type-small)] font-semibold">
                 {liveUrl && (
                     <a
                         href={liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        className={FOCUS_RING_CLASS}
                     >
                         Live
                     </a>
@@ -51,7 +62,7 @@ const ProjectCard = ({
                         href={repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        className={FOCUS_RING_CLASS}
                     >
                         Repo
                     </a>
@@ -61,4 +72,4 @@ const ProjectCard = ({
     </article>
 )
 
-export default ProjectCard
+export default ProjectLedgerEntry
