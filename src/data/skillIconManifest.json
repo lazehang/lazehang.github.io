@@ -1,0 +1,86 @@
+{
+  "react": {
+    "hex": "61DAFB",
+    "title": "React"
+  },
+  "vuedotjs": {
+    "hex": "4FC08D",
+    "title": "Vue.js"
+  },
+  "nuxtdotjs": {
+    "hex": "00DC82",
+    "title": "Nuxt.js"
+  },
+  "nextdotjs": {
+    "hex": "000000",
+    "title": "Next.js"
+  },
+  "typescript": {
+    "hex": "3178C6",
+    "title": "TypeScript"
+  },
+  "tailwindcss": {
+    "hex": "06B6D4",
+    "title": "Tailwind CSS"
+  },
+  "gatsby": {
+    "hex": "663399",
+    "title": "Gatsby"
+  },
+  "nodedotjs": {
+    "hex": "5FA04E",
+    "title": "Node.js"
+  },
+  "php": {
+    "hex": "777BB4",
+    "title": "PHP"
+  },
+  "laravel": {
+    "hex": "FF2D20",
+    "title": "Laravel"
+  },
+  "githubcopilot": {
+    "hex": "000000",
+    "title": "GitHub Copilot"
+  },
+  "amazonaws": {
+    "hex": "232F3E",
+    "title": "Amazon AWS"
+  },
+  "docker": {
+    "hex": "2496ED",
+    "title": "Docker"
+  },
+  "githubactions": {
+    "hex": "2088FF",
+    "title": "GitHub Actions"
+  },
+  "cloudflare": {
+    "hex": "F38020",
+    "title": "Cloudflare"
+  },
+  "vite": {
+    "hex": "646CFF",
+    "title": "Vite"
+  },
+  "webpack": {
+    "hex": "8DD6F9",
+    "title": "Webpack"
+  },
+  "playwright": {
+    "hex": "2EAD33",
+    "title": "Playwright"
+  },
+  "vitest": {
+    "hex": "6E9F18",
+    "title": "Vitest"
+  },
+  "stripe": {
+    "hex": "008CDD",
+    "title": "Stripe"
+  },
+  "javascript": {
+    "hex": "F7DF1E",
+    "title": "JavaScript"
+  }
+}

@@ -35,7 +35,7 @@ const projects = [
 ]
 
 const Projects = () => (
-    <section className="py-10 pb-16">
+    <section id="work" className="py-10 pb-16 scroll-mt-6">
         <h2 className="mt-0">Selected work</h2>
         <p className="max-w-2xl text-neutral-700">
             Roles and products from my resume — side projects labeled as such.

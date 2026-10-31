@@ -1,10 +1,5 @@
 import * as React from 'react'
-
-const TechChip = ({ label }) => (
-    <span className="inline-block text-sm px-2 py-1 mr-2 mb-2 border border-neutral-300 rounded bg-neutral-50 text-neutral-800">
-        {label}
-    </span>
-)
+import SkillChip from './skillChip'
 
 const ProjectCard = ({
     title,
@@ -15,7 +10,7 @@ const ProjectCard = ({
     liveUrl,
     repoUrl,
 }) => (
-    <article className="border border-neutral-200 rounded-lg p-6 bg-white h-full flex flex-col">
+    <article className="border border-neutral-200 rounded-lg p-6 bg-white h-full flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200">
         <header>
             <h3 className="mt-0 mb-2 text-xl font-semibold">{title}</h3>
             <p className="text-sm text-neutral-600 mb-0 flex flex-wrap items-center gap-2">
@@ -34,9 +29,11 @@ const ProjectCard = ({
                 </li>
             ))}
         </ul>
-        <div className="mb-4">{tech.map(t => (
-            <TechChip key={t} label={t} />
-        ))}</div>
+        <div className="mb-4 flex flex-wrap">
+            {tech.map(t => (
+                <SkillChip key={t} label={t} />
+            ))}
+        </div>
         {(liveUrl || repoUrl) && (
             <div className="space-x-4 text-sm font-semibold">
                 {liveUrl && (

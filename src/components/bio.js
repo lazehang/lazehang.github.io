@@ -29,8 +29,11 @@ const Bio = () => {
 
     return (
         <div className="grid md:grid-cols-2 gap-10 items-center justify-center pb-10 md:py-10">
-            <div className="md:order-2 relative">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full h-[75%] w-[95%] bg-gradient-to-r to-[#3730a3] via-yellow-100 from-[#e8ce69] shadow-md" />
+            <div className="md:order-2 relative flex justify-center py-4">
+                <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[min(88%,320px)] aspect-square bg-gradient-to-br from-[#e8ce69]/70 via-[#f3e8c4]/50 to-[#3730a3]/65 blur-[1px] opacity-80"
+                    aria-hidden="true"
+                />
                 <GridImage />
             </div>
             {author?.name && (
