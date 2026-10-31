@@ -1,17 +1,14 @@
 import * as React from 'react'
-
-const SkillChip = ({ label }) => (
-    <span className="inline-block text-sm px-3 py-1 mr-2 mb-2 border border-neutral-300 rounded-full bg-neutral-50 text-neutral-800">
-        {label}
-    </span>
-)
+import SkillChip from './skillChip'
 
 const SkillGroup = ({ title, skills }) => (
     <section className="mb-10">
-        <h2 className="text-lg font-semibold mt-0 mb-4">{title}</h2>
-        <div>{skills.map(skill => (
-            <SkillChip key={skill} label={skill} />
-        ))}</div>
+        <h3 className="text-lg font-semibold mt-0 mb-4">{title}</h3>
+        <div className="flex flex-wrap">
+            {skills.map(skill => (
+                <SkillChip key={skill} label={skill} />
+            ))}
+        </div>
     </section>
 )
 
