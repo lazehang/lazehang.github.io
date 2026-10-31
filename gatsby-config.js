@@ -1,11 +1,11 @@
 module.exports = {
     siteMetadata: {
-        title: `Mangal Hang Limbu | lazehang`,
+        title: `Mangal Hang Limbu | Full-stack developer (Hong Kong)`,
         author: {
             name: `Mangal Hang Limbu`,
-            summary: `who lives and works in Hong Kong building useful things on web.`
+            summary: `Full-stack engineer with 7+ years building web products in Hong Kong. Comfortable across React, Vue, Nuxt, Next.js, Node, TypeScript, PHP, and Laravel.`
         },
-        description: `Mangal Hang Limbu / lazehang's personal website.`,
+        description: `Portfolio of Mangal Hang Limbu (lazehang) — full-stack web developer in Hong Kong.`,
         siteUrl: `https://www.lazehang.com`,
         social: {}
     },
@@ -118,7 +118,7 @@ module.exports = {
               }
             `,
                         output: '/rss.xml',
-                        title: 'Gatsby Starter Blog RSS Feed'
+                        title: 'Mangal Hang Limbu'
                     }
                 ]
             }
@@ -126,13 +126,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby Starter Blog`,
-                short_name: `GatsbyJS`,
+                name: `Mangal Hang Limbu`,
+                short_name: `lazehang`,
                 start_url: `/`,
                 background_color: `#ffffff`,
                 // This will impact how browsers show your PWA/website
                 // https://css-tricks.com/meta-theme-color-and-trickery/
-                theme_color: `#663399`,
+                theme_color: `#111111`,
                 display: `minimal-ui`,
                 icon: `src/images/favicon_io/android-chrome-512x512.png`, // This path is relative to the root of the site.
                 icons: [

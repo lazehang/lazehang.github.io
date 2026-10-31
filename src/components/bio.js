@@ -8,6 +8,9 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GridImage from './gridImage'
+
+const RESUME_PATH = '/Resume-Mangal-Hang-Limbu.pdf'
+
 const Bio = () => {
     const data = useStaticQuery(graphql`
         query BioQuery {
@@ -17,15 +20,11 @@ const Bio = () => {
                         name
                         summary
                     }
-                    social {
-                        twitter
-                    }
                 }
             }
         }
     `)
 
-    // Set these values by editing "siteMetadata" in gatsby-config.js
     const author = data.site.siteMetadata?.author
 
     return (
@@ -35,76 +34,58 @@ const Bio = () => {
                 <GridImage />
             </div>
             {author?.name && (
-                <div className="md:order-1 bg-white">
+                <div className="md:order-1 bg-white relative z-10">
                     <h1 className="mt-0">
                         I'm {author.name}, a full-stack web developer.
                     </h1>
-                    <p className="max-w-lg pb-2 mb-0">
-                        {author?.summary || null}
-                    </p>
-                    <p className="max-w-lg">
-                        I specialize in building ⚡️ blazing fast, 📉 data
-                        driven web solutions. You can connect with me on{' '}
+                    <p className="max-w-lg pb-2 mb-0">{author?.summary || null}</p>
+                    <p className="max-w-lg mb-0">
+                        You can connect with me on{' '}
                         <a
                             href="https://hk.linkedin.com/in/mangal-limbu-05a951111"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="underline font-semibold"
+                            className="underline font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                         >
-                            linkedin
-                        </a>{' '}
-                        or reach me out on{' '}
-                        <a
-                            href="mailto:hello@lazehang.com"
-                            rel="noopener noreferrer"
-                            className="underline font-semibold"
-                        >
-                            hello@lazehang.com
+                            LinkedIn
                         </a>
-                        {/* <a
+                        ,{' '}
+                        <a
                             href="https://github.com/lazehang"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="underline font-semibold"
+                            className="underline font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                         >
-                            Github
-                        </a> */}
+                            GitHub
+                        </a>
+                        , or{' '}
+                        <a
+                            href="mailto:lazehang@gmail.com"
+                            className="underline font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        >
+                            lazehang@gmail.com
+                        </a>
                         .
                     </p>
-                    <div className="mt-16 md:mt-0 text-center md:text-left max-w-xs mx-auto md:mx-0">
-                        <div className="text-left text-sm pb-1 pr-4 border-black font-semibold">
-                            Got a project?
+                    <div className="mt-10 md:mt-8 text-center md:text-left max-w-xs mx-auto md:mx-0">
+                        <div className="text-left text-sm pb-2 font-semibold">
+                            Open to opportunities
                         </div>
                         <a
-                            href="mailto:hello@lazehang.com"
-                            className="text-base text-center block mx-auto md:inline-block px-6 py-2 border border-black text-white bg-black font-semibold "
+                            href="mailto:lazehang@gmail.com"
+                            className="text-base text-center block mx-auto md:inline-block min-h-[44px] min-w-[44px] leading-[44px] px-6 border border-black text-white bg-black font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                         >
-                            Connect with me{' '}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-5 h-5 inline-block"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                                />
-                            </svg>
+                            Email me
                         </a>
                     </div>
-                    <div className="text-center md:text-left">
-                        <span className="text-sm">or </span>
+                    <div className="text-center md:text-left mt-4">
                         <a
-                            href="/SE_Mangal_Hang_Limbu.pdf"
+                            href={RESUME_PATH}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-2 text-sm underline inline-block font-semibold"
+                            className="text-sm underline inline-block font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                         >
-                            Checkout resume
+                            Download resume
                         </a>
                     </div>
                 </div>
