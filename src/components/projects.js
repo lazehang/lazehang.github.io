@@ -1,10 +1,11 @@
 import * as React from 'react'
-import ProjectCard from './projectCard'
+import ProjectLedgerEntry from './projectCard'
 
 const projects = [
     {
         title: 'GEMGEM',
-        meta: 'Full-stack / marketplace · 02/2023–October 2026',
+        roleKind: 'Full-stack / marketplace',
+        dates: '02/2023–October 2026',
         bullets: [
             'Marketplace web app connecting buyers and sellers.',
             'Nuxt front end, migrated from v2 to v3.',
@@ -14,7 +15,8 @@ const projects = [
     },
     {
         title: 'UNDONE',
-        meta: 'Full-stack · 08/2018–01/2023',
+        roleKind: 'Full-stack',
+        dates: '08/2018–01/2023',
         bullets: [
             'Laravel API after migrating from CodeIgniter to Laravel ADR.',
             'Nuxt.js SSR storefront with roughly 50% faster loads (per resume).',
@@ -23,7 +25,7 @@ const projects = [
     },
     {
         title: 'ItineraryEdge',
-        meta: 'Open-core · not employment',
+        roleKind: 'Open-core · not employment',
         sideProject: true,
         bullets: [
             'Edge visa itinerary on Cloudflare Pages, Workers, and D1.',
@@ -35,14 +37,18 @@ const projects = [
 ]
 
 const Projects = () => (
-    <section id="work" className="py-10 pb-16 scroll-mt-6">
-        <h2 className="mt-0">Selected work</h2>
-        <p className="max-w-2xl text-neutral-700">
+    <section
+        id="work"
+        className="section-enter scroll-mt-6"
+        style={{ paddingTop: 'var(--section-gap)', paddingBottom: 'var(--section-gap)' }}
+    >
+        <h2 className="mt-0 max-w-[var(--column)]">Selected work</h2>
+        <p className="max-w-[var(--column)] text-[var(--muted)] text-[var(--type-body)]">
             Roles and products from my resume — side projects labeled as such.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div className="projects-ledger mt-10">
             {projects.map(project => (
-                <ProjectCard key={project.title} {...project} />
+                <ProjectLedgerEntry key={project.title} {...project} />
             ))}
         </div>
     </section>

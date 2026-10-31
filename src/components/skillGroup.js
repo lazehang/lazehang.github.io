@@ -1,19 +1,9 @@
 import * as React from 'react'
 import SkillChip from './skillChip'
 
-const SkillGroup = ({ title, skills }) => (
-    <section className="mb-10">
-        <h3 className="text-lg font-semibold mt-0 mb-4">{title}</h3>
-        <div className="flex flex-wrap">
-            {skills.map(skill => (
-                <SkillChip key={skill} label={skill} />
-            ))}
-        </div>
-    </section>
-)
-
-const skillGroups = [
+export const skillGroupDefs = [
     {
+        id: 'stacks-frontend',
         title: 'Frontend',
         skills: [
             'React',
@@ -26,10 +16,12 @@ const skillGroups = [
         ],
     },
     {
+        id: 'stacks-backend',
         title: 'Backend',
         skills: ['Node', 'PHP', 'Laravel', 'REST APIs'],
     },
     {
+        id: 'stacks-automation-ai',
         title: 'Automation / AI',
         skills: [
             'n8n (self-hosted)',
@@ -40,6 +32,7 @@ const skillGroups = [
         ],
     },
     {
+        id: 'stacks-devops',
         title: 'DevOps',
         skills: [
             'AWS',
@@ -53,15 +46,31 @@ const skillGroups = [
         ],
     },
     {
+        id: 'stacks-testing',
         title: 'Testing',
         skills: ['Playwright', 'Vitest', 'PHPUnit', 'SSR', 'Core Web Vitals'],
     },
 ]
 
+const SkillGroup = ({ id, title, skills }) => (
+    <section id={id} className="scroll-mt-24 mb-10 last:mb-0">
+        <h3 className="text-[var(--type-body)] font-normal text-[var(--muted)] mt-0 mb-4">
+            {title}
+        </h3>
+        <ul className="list-none p-0 m-0 space-y-1">
+            {skills.map(skill => (
+                <li key={skill}>
+                    <SkillChip label={skill} layout="row" />
+                </li>
+            ))}
+        </ul>
+    </section>
+)
+
 export const SkillGroups = () => (
     <div>
-        {skillGroups.map(group => (
-            <SkillGroup key={group.title} {...group} />
+        {skillGroupDefs.map(group => (
+            <SkillGroup key={group.id} {...group} />
         ))}
     </div>
 )

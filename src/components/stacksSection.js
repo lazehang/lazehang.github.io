@@ -1,23 +1,26 @@
 import * as React from 'react'
 import { SkillGroups } from './skillGroup'
+import StackGroupFilter from './stackGroupFilter'
 
 const StacksSection = () => (
     <section
         id="stacks"
-        className="relative py-12 md:py-16 scroll-mt-6 rounded-xl overflow-hidden"
+        className="section-enter scroll-mt-6 py-12 md:py-16 bg-[var(--surface)]"
+        style={{
+            marginLeft: 'calc(-1 * var(--page-margin))',
+            marginRight: 'calc(-1 * var(--page-margin))',
+            paddingLeft: 'var(--page-margin)',
+            paddingRight: 'var(--page-margin)',
+            marginTop: 'var(--section-gap)',
+        }}
     >
-        <div
-            className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat opacity-[0.22] pointer-events-none"
-            style={{ backgroundImage: `url(/stacks-section-bg.jpg)` }}
-            aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/88 to-white/92 pointer-events-none" />
-        <div className="relative">
+        <div className="max-w-[var(--column)] md:max-w-none">
             <h2 className="mt-0">Tech stack</h2>
-            <p className="max-w-2xl text-neutral-700 mb-0">
+            <p className="text-[var(--muted)] text-[var(--type-body)] mb-0 max-w-[var(--column)]">
                 Tools I use day to day, grouped for hiring conversations.
             </p>
             <div className="pt-8">
+                <StackGroupFilter />
                 <SkillGroups />
             </div>
         </div>
