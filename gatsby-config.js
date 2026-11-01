@@ -165,7 +165,14 @@ module.exports = {
             resolve: `${__dirname}/plugins/gatsby-plugin-deferred-gtm`,
         },
         {
-            resolve: 'gatsby-plugin-sitemap'
+            resolve: 'gatsby-plugin-sitemap',
+            options: {
+                excludes: ['/hello-world/', '/stacks/'],
+                serialize: ({ path }) => ({
+                    url: path,
+                    priority: path === '/' ? 1.0 : 0.7
+                })
+            }
         }
     ]
 }

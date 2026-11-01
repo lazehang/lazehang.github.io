@@ -514,10 +514,16 @@ blockquote {
     overflow: hidden;
 }
 
-.case-media img {
+.case-media img,
+.case-media .case-media__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.case-media .case-media__gatsby {
+    width: 100%;
+    height: 100%;
 }
 
 .case-title {

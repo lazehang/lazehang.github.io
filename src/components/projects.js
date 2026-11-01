@@ -12,6 +12,8 @@ const projects = [
             'Stripe Connect payments and seller payouts.',
         ],
         tech: ['Nuxt', 'Vue', 'Stripe Connect', 'TypeScript', 'JavaScript'],
+        mediaAlt:
+            'GEMGEM marketplace — authenticated fine jewelry and diamonds',
     },
     {
         title: 'UNDONE',
@@ -22,6 +24,7 @@ const projects = [
             'Nuxt.js SSR storefront with roughly 50% faster loads (per resume).',
         ],
         tech: ['Laravel', 'PHP', 'Nuxt', 'SSR'],
+        mediaAlt: 'UNDONE custom watches storefront banner',
     },
     {
         title: 'ItineraryEdge',
@@ -33,6 +36,8 @@ const projects = [
         ],
         tech: ['Next.js', 'Workers', 'D1', 'TypeScript'],
         repoUrl: 'https://github.com/lazehang/itineraryedge',
+        mediaAlt:
+            'ItineraryEdge open-core travel itinerary project preview',
     },
 ]
 

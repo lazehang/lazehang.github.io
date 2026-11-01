@@ -17,7 +17,9 @@ const NotFoundPage = ({ data, location }) => {
 
 export default NotFoundPage
 
-export const Head = () => <Seo title="404: Not Found" />
+export const Head = ({ location }) => (
+    <Seo title="404: Not Found" pathname={location.pathname} />
+)
 
 export const pageQuery = graphql`
     query {

@@ -1,0 +1,16 @@
+# lazehang.com — hiring portfolio
+
+> Personal portfolio of Mangal Hang Limbu (Laze / lazehang), a full-stack web developer based in Hong Kong.
+
+Canonical site: https://www.lazehang.com/
+Contact: lazehang@gmail.com
+
+## Key sections
+
+- Work and selected projects: https://www.lazehang.com/#work
+- Tech stacks: https://www.lazehang.com/#stacks
+
+## Documents
+
+- Resume (PDF): https://www.lazehang.com/Resume-Mangal-Hang-Limbu.pdf
+- Sitemap: https://www.lazehang.com/sitemap.xml

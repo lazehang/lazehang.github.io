@@ -1,5 +1,6 @@
 import * as React from 'react'
 import SkillChip from './skillChip'
+import CaseWorkMedia from './caseWorkMedia'
 import { FOCUS_RING_CLASS } from '../constants/contact'
 
 const caseAccentMap = {
@@ -17,7 +18,6 @@ const ProjectCaseCard = ({
     tech,
     liveUrl,
     repoUrl,
-    mediaSrc,
     mediaAlt,
 }) => (
     <article
@@ -31,9 +31,9 @@ const ProjectCaseCard = ({
                 {sideProject && <span className="case-meta__badge">Side project</span>}
             </div>
             <div className="case-main">
-                <div className="case-media" aria-hidden={!mediaSrc}>
-                    {mediaSrc ? (
-                        <img src={mediaSrc} alt={mediaAlt || `${title} project`} />
+                <div className="case-media" aria-hidden={!mediaAlt}>
+                    {mediaAlt ? (
+                        <CaseWorkMedia title={title} alt={mediaAlt} />
                     ) : null}
                 </div>
                 <h3 className="case-title">{title}</h3>

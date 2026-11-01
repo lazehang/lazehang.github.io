@@ -26,8 +26,7 @@ export default function StacksRedirect({ location }) {
 
 export const Head = () => (
     <>
-        <Seo title="Stacks" />
-        <link rel="canonical" href={`${SITE_URL}/`} />
+        <Seo title="Stacks" pathname="/" />
         <meta httpEquiv="refresh" content={`0;url=${SITE_URL}/#stacks`} />
     </>
 )
