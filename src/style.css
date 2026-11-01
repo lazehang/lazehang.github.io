@@ -342,6 +342,10 @@ blockquote {
     padding-block: var(--space-8);
 }
 
+.hero-section.section-enter {
+    animation: none;
+}
+
 .hero-grid {
     display: grid;
     gap: var(--space-8);
@@ -537,6 +541,14 @@ blockquote {
 .stacks-section {
     padding-block: var(--section-gap);
     scroll-margin-top: var(--nav-h);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}
+
+#work.section-enter,
+.closing-cta.section-enter {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
 .signature-label {
