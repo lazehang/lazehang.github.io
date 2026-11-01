@@ -377,11 +377,10 @@ blockquote {
     }
 }
 
-/* Hero portrait — dissolve card; melt into --ground (both themes) */
+/* Hero portrait — cutout alpha on page --ground (both themes) */
 .portrait-frame {
     padding: 0;
     background: transparent;
-    background-color: var(--ground);
     border: none;
     border-radius: 0;
 }
@@ -392,24 +391,6 @@ blockquote {
     width: 100%;
     max-width: min(92vw, 300px);
     margin-inline: auto;
-    -webkit-mask-image: radial-gradient(
-        68% 68% at 50% 42%,
-        #000 52%,
-        rgba(0, 0, 0, 0.85) 68%,
-        rgba(0, 0, 0, 0.35) 82%,
-        transparent 100%
-    );
-    mask-image: radial-gradient(
-        68% 68% at 50% 42%,
-        #000 52%,
-        rgba(0, 0, 0, 0.85) 68%,
-        rgba(0, 0, 0, 0.35) 82%,
-        transparent 100%
-    );
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
     border-radius: 0;
 }
 
