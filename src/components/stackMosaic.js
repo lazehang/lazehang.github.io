@@ -24,6 +24,7 @@ const MosaicTile = ({ label }) => {
 
     return (
         <span
+            role="listitem"
             tabIndex={0}
             className={`mosaic-tile group/mos ${FOCUS_RING_CLASS}`}
             style={{ '--skill-brand': brand }}
