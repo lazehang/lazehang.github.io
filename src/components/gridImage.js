@@ -7,8 +7,8 @@ export default function GridImage({ className = '' }) {
             <div className="portrait-frame">
                 <StaticImage
                     src="../images/profile-pic.png"
-                    width={500}
-                    height={500}
+                    width={800}
+                    height={800}
                     alt="Mangal Hang Limbu"
                     className="portrait-media w-full mx-auto"
                     imgClassName="w-full h-auto"

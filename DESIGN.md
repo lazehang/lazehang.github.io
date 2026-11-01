@@ -141,7 +141,7 @@ Wordmark · Work · Stacks · Resume pill (flat lift) · theme toggle. Sticky fl
 
 ### Headshot
 
-No surface card / border; **1:1** cutout PNG with alpha (edge dissolve via transparency, not CSS mask) over `--ground` (both themes); square media corners; display ~300px mobile / ~480px desktop; caption “Based in Hong Kong” in `--muted`; no glass, rest shadow, or glow.
+**Headshot:** HQ rembg RGBA cutout (`profile-pic.png`, ~800), grayscale asset, no CSS mask; sits on soft token hero gradient (`--hero-gradient`: surface→ground, both themes). Theme toggle: ink on surface-lift chip + border-soft, visible in light and dark. Display ~300px mobile / ~480px desktop; caption “Based in Hong Kong” in `--muted`; no glass, rest shadow, or glow.
 
 ### Buttons
 
@@ -185,6 +185,6 @@ GEMGEM through October 2026; mailto:lazehang@gmail.com; headshot-primary; stacks
 ## Don’t
 
 - Ship GT Walsheim / Azeret without license.  
-- Reintroduce gradients, glass, rest shadows, violet page primary.  
+- Reintroduce decorative/mesh/glow gradients, glass, rest shadows, violet page primary (**exception:** soft hero `--hero-gradient` tone-step per Stage 1b HQ polish).  
 - Invent project screenshots or metrics.  
 - Major stack upgrades.
