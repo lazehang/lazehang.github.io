@@ -5,7 +5,7 @@ const THEME_FOUC_SCRIPT = `(function(){try{var k='lazehang-theme';var s=localSto
 const INTER_WOFF2_PRELOADS = ['/fonts/inter-latin-400-normal.woff2']
 
 export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
-    setHtmlAttributes({ 'data-theme': 'dark' })
+    setHtmlAttributes({ lang: 'en', 'data-theme': 'dark' })
     setHeadComponents([
         <script key="theme-fouc" dangerouslySetInnerHTML={{ __html: THEME_FOUC_SCRIPT }} />,
         <meta key="theme-color" name="theme-color" content="#05070d" />,
