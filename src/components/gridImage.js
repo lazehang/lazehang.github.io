@@ -7,11 +7,11 @@ export default function GridImage({ className = '' }) {
             <div className="portrait-frame">
                 <StaticImage
                     src="../images/profile-pic.jpg"
-                    width={420}
-                    height={420}
+                    width={560}
+                    height={560}
                     alt="Mangal Hang Limbu"
-                    className="w-full max-w-[min(42vw,380px)] mx-auto"
-                    imgClassName="rounded-[var(--radius-media)] grayscale w-full h-auto"
+                    className="portrait-media w-full mx-auto"
+                    imgClassName="grayscale w-full h-auto"
                 />
             </div>
             <figcaption className="portrait-caption">Based in Hong Kong</figcaption>
