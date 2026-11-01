@@ -377,17 +377,59 @@ blockquote {
     }
 }
 
+/* Hero portrait — dissolve card; melt into --ground (both themes) */
 .portrait-frame {
-    padding: var(--space-3);
-    background: var(--surface);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-soft);
+    padding: 0;
+    background: transparent;
+    background-color: var(--ground);
+    border: none;
+    border-radius: 0;
+}
+
+.portrait-frame .gatsby-image-wrapper,
+.portrait-media {
+    display: block;
+    width: 100%;
+    max-width: min(92vw, 300px);
+    margin-inline: auto;
+    -webkit-mask-image: radial-gradient(
+        68% 68% at 50% 42%,
+        #000 52%,
+        rgba(0, 0, 0, 0.85) 68%,
+        rgba(0, 0, 0, 0.35) 82%,
+        transparent 100%
+    );
+    mask-image: radial-gradient(
+        68% 68% at 50% 42%,
+        #000 52%,
+        rgba(0, 0, 0, 0.85) 68%,
+        rgba(0, 0, 0, 0.35) 82%,
+        transparent 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    border-radius: 0;
+}
+
+@media (min-width: 900px) {
+    .portrait-frame .gatsby-image-wrapper,
+    .portrait-media {
+        max-width: min(42vw, 480px);
+    }
+}
+
+.portrait-frame img,
+.portrait-media img {
+    border-radius: 0 !important;
 }
 
 .portrait-caption {
     margin-top: var(--space-3);
     font-size: var(--text-sm);
     color: var(--muted);
+    text-align: center;
 }
 
 /* Buttons */
