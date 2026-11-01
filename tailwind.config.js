@@ -11,7 +11,7 @@ module.exports = {
                 accent: 'var(--accent)',
             },
             fontFamily: {
-                sans: ['Poppins', 'system-ui', 'sans-serif'],
+                sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             borderRadius: {
                 media: 'var(--radius-media)',

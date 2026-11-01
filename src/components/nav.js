@@ -1,36 +1,45 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { FOCUS_RING_CLASS, RESUME_PATH } from '../constants/contact'
-
-const navLinkClass = `text-[var(--ink)] font-semibold no-underline hover:underline underline-offset-4 ${FOCUS_RING_CLASS}`
+import ThemeToggle from './themeToggle'
 
 export default function Nav() {
+    const [scrolled, setScrolled] = React.useState(false)
+
+    React.useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 8)
+        onScroll()
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
+
     return (
         <nav
-            className="min-h-[56px] md:min-h-[64px] flex justify-between items-center gap-4 py-2"
+            className={`site-nav ${scrolled ? 'is-scrolled' : ''}`}
             aria-label="Primary"
         >
             <Link
                 to="/"
-                className={`font-semibold text-[var(--ink)] no-underline hover:underline ${FOCUS_RING_CLASS}`}
+                className={`site-nav__link font-semibold no-underline hover:underline ${FOCUS_RING_CLASS}`}
             >
                 lazehang.
             </Link>
-            <div className="flex flex-wrap justify-end gap-x-6 gap-y-1 text-[var(--type-small)] font-semibold">
-                <Link to="/#work" className={navLinkClass}>
+            <div className="site-nav__links">
+                <Link to="/#work" className={`site-nav__link ${FOCUS_RING_CLASS}`}>
                     Work
                 </Link>
-                <Link to="/#stacks" className={navLinkClass}>
+                <Link to="/#stacks" className={`site-nav__link ${FOCUS_RING_CLASS}`}>
                     Stacks
                 </Link>
                 <a
                     href={RESUME_PATH}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={navLinkClass}
+                    className={`nav-cta ${FOCUS_RING_CLASS}`}
                 >
                     Resume
                 </a>
+                <ThemeToggle />
             </div>
         </nav>
     )
