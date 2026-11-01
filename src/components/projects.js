@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ProjectLedgerEntry from './projectCard'
+import ProjectCaseCard from './projectCard'
 
 const projects = [
     {
@@ -39,16 +39,16 @@ const projects = [
 const Projects = () => (
     <section
         id="work"
-        className="section-enter scroll-mt-6"
+        className="section-enter scroll-mt-[var(--nav-h)]"
         style={{ paddingTop: 'var(--section-gap)', paddingBottom: 'var(--section-gap)' }}
     >
-        <h2 className="mt-0 max-w-[var(--column)]">Selected work</h2>
-        <p className="max-w-[var(--column)] text-[var(--muted)] text-[var(--type-body)]">
+        <h2 className="mt-0">Selected work</h2>
+        <p className="text-[var(--muted)] max-w-[42ch]">
             Roles and products from my resume — side projects labeled as such.
         </p>
-        <div className="projects-ledger mt-10">
+        <div className="projects-cases">
             {projects.map(project => (
-                <ProjectLedgerEntry key={project.title} {...project} />
+                <ProjectCaseCard key={project.title} {...project} />
             ))}
         </div>
     </section>

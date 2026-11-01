@@ -129,10 +129,8 @@ module.exports = {
                 name: `Mangal Hang Limbu`,
                 short_name: `lazehang`,
                 start_url: `/`,
-                background_color: `#ffffff`,
-                // This will impact how browsers show your PWA/website
-                // https://css-tricks.com/meta-theme-color-and-trickery/
-                theme_color: `#111111`,
+                background_color: `#05070d`,
+                theme_color: `#05070d`,
                 display: `minimal-ui`,
                 icon: `src/images/favicon_io/android-chrome-512x512.png`, // This path is relative to the root of the site.
                 icons: [
@@ -168,7 +166,7 @@ module.exports = {
             options: {
                 fonts: [
                     {
-                        family: `Poppins:wght@400;600;900`
+                        family: `Inter:wght@400;500;600;700`
                     }
                 ]
             }

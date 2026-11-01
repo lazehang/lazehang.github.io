@@ -1,182 +1,190 @@
 ---
 version: alpha
 name: lazehang-portfolio
+status: FINAL Stage 1b — tokens from Grok Bot capture pack + open-design-artifact.css; light companion invert
 description: >
-  Hiring portfolio for Mangal Hang Limbu (lazehang) — full-stack developer in Hong Kong.
-  Visual system adapted from quiet-instrument (design-taste-frontend) plus structure from
-  Vercel- and Cal-inspired DESIGN.md references (awesome-design-md / VoltAgent, MIT).
-  No trademarks, proprietary fonts, or third-party logos beyond vendored Simple Icons for
-  named skills. Open face: Poppins (Google Fonts).
+  Hiring portfolio for Mangal Hang Limbu (lazehang). Visual SoT: Open Design artifact
+  (dark) + dual theme (light companion). Supersedes quiet-instrument-as-primary (PR #5).
+  Inter only (GT Walsheim named in artifact but not loaded — do not ship unlicensed files).
+  Taste: legal equivalents (no radial glows, no glass blur, no rest shadows); page accent #0099ff.
 colors:
-  ground: "#ffffff"
-  surface: "#f2f2f2"
-  surface-2: "#e8e8e8"
-  ink: "#0a0a0a"
-  muted: "#6b6b6b"
-  field-1: "#000000"
-  field-1-ink: "#ffffff"
-  accent: "#d92b21"
-  accent-ink: "#ffffff"
-  focus: "#0a0a0a"
+  dark-bg: "#05070d"
+  dark-surface: "#0e121b"
+  dark-surface-lift: "#151b28"
+  dark-fg: "#ffffff"
+  dark-fg-2: "#c5cad6"
+  dark-accent: "#0099ff"
+  dark-accent-cyan: "#22d3ee"
+  dark-accent-violet: "#a78bfa"
+  light-bg: "#f4f6f9"
+  light-surface: "#ffffff"
+  light-surface-lift: "#e8ecf3"
+  light-fg: "#0a0c10"
+  light-fg-2: "#3a4050"
+  light-muted: "#5c6578"
+  light-accent: "#0099ff"
 typography:
-  family: "Poppins, system-ui, sans-serif"
+  family: "Inter, system-ui, sans-serif"
   display:
-    size: "clamp(2.5rem, 5.5vw, 4.5rem)"
-    weight: 600
-    lineHeight: 1.05
-    letterSpacing: "-0.03em"
-  h2:
-    size: "clamp(1.5rem, 2.2vw, 2rem)"
-    weight: 600
-    lineHeight: 1.15
-  body:
-    size: "1.125rem"
-    weight: 400
-    lineHeight: 1.5
-  small:
-    size: "0.9375rem"
-    weight: 400
-    lineHeight: 1.5
-  caption:
-    size: "0.875rem"
+    size: "clamp(48px, 9vw, 85px)"
     weight: 500
-    lineHeight: 1.4
+    lineHeight: 0.9
+    letterSpacing: "-0.05em"
+  h2:
+    size: "clamp(36px, 5vw, 62px)"
+    weight: 500
+    lineHeight: 0.95
+    letterSpacing: "-0.05em"
+  body:
+    size: "15px"
+    weight: 400
+    lineHeight: 1.3
 rounded:
-  control: "6px"
-  media: "12px"
-  chip: "9999px"
+  sm: "8px"
+  md: "12px"
+  lg: "20px"
+  pill: "9999px"
 spacing:
-  page-margin: "clamp(1.25rem, 4vw, 2rem)"
-  section: "clamp(6rem, 12vw, 8.75rem)"
-  column: "32rem"
+  container-max: "1320px"
+  gutter-desktop: "48px"
+  section-y-desktop: "128px"
+  nav-h: "64px"
+theme:
+  default: "prefers-color-scheme"
+  persistenceKey: "lazehang-theme"
+  attribute: "data-theme"
 ---
 
-# DESIGN.md — lazehang.com portfolio
+# DESIGN.md — lazehang.com portfolio (Open Design dual theme)
 
-Upstream learning refs (adapt, do not clone): **Vercel** and **Cal.com** analyses from [VoltAgent/awesome-design-md](https://github.com/voltagent/awesome-design-md) (MIT). Composition direction: **quiet-instrument** (design-taste-frontend).
+> **Supersession:** Replaces quiet-instrument **light-only** DESIGN.md as the product visual system. Open Design artifact + capture pack are SoT for composition and dark tokens. Quiet-instrument anti-slop (no gradients, rest shadows, glass, indigo/violet *page* primary, tiny tracked eyebrows) still governs **legal equivalents**.  
+> **Fonts:** Artifact names GT Walsheim / Azeret Mono but loads **Inter** only — ship **Inter 400–700** alone (max one face). Do not vendor unlicensed GT Walsheim/Azeret.
+
+**Artifact:** https://open-design.app/artifact/1c136747-5c6d-48c8-ada5-8f0cf33894c9/b237c671-ca30-4c5f-824e-64c5435ddc42  
+**Pack:** `/workspace/portfolio-open-design-CAPTURE-PACK.md`, `/workspace/open-design-artifact.css`
 
 ## Overview
 
-A hiring one-pager that whispers craft instead of shouting product marketing. White ground, near-black ink, one black primary CTA, Poppins only. The B&W headshot is the primary photograph; stacks are real Simple Icons used as calibrated marks (mono → brand on hover/focus). Surfaces separate by **tone steps**, never gradients, rest shadows, or indigo/violet “assistant” accents.
-
-**Key characteristics**
-
-- Quiet column (~512px) left-of-centre on desktop; headshot answers the opposite side of the hero grid.
-- Black filled CTA (`field-1`); secondary actions are ink text links.
-- Work as a **ledger**, not a 2-up card grid.
-- Stacks as grouped two-ended rows on a flat `surface` band, with optional group filter.
-- Closing CTA is a plain sentence + one button on empty ground.
-- Footer is a single quiet line.
+Dark-first hiring one-pager with a light companion theme. Large Inter display name, B&W headshot with “Based in Hong Kong”, work as meta+media case cards, signature stack + filterable mosaic, display-scale closing CTA. Page accent `#0099ff`. Surfaces via tone steps; sticky flat nav; pill CTAs.
 
 ## Colors
 
-| Role | Hex | Use |
-| --- | --- | --- |
-| `ground` | `#ffffff` | Page background |
-| `surface` | `#f2f2f2` | Stacks band, headshot tone frame, soft panels |
-| `surface-2` | `#e8e8e8` | Chip fill / stronger tone step |
-| `ink` | `#0a0a0a` | Headings, body, links, focus ring |
-| `muted` | `#6b6b6b` | Meta dates, inactive ledger siblings, captions |
-| `field-1` | `#000000` | Primary button fill |
-| `field-1-ink` | `#ffffff` | Primary button label |
-| `accent` | `#d92b21` | At most one UI chrome use per screen (e.g. active stack filter) — not body links |
-| Skill brand | Simple Icons hex | Hover/focus fill on skill SVGs only |
+### Dark (artifact FINAL)
 
-**Do not use:** mesh/gold→indigo gradients, `#3730a3` / violet link colour, cream+terracotta pairs, rest-state drop shadows, hairline rules as section dividers.
+| Role | Value | Use |
+| --- | --- | --- |
+| `bg` | `#05070d` | Page / theme-color |
+| `surface` | `#0e121b` | Cards, portrait pad, tiles context |
+| `surface-lift` | `#151b28` | Hover / secondary control fill |
+| `fg` | `#ffffff` | Headings, primary text |
+| `fg-2` | `#c5cad6` | Lead / secondary body |
+| `muted` | `rgba(255,255,255,.72)` | Secondary (verify contrast) |
+| `meta` | `rgba(255,255,255,.5)` | Captions; bump to muted if &lt;4.5:1 |
+| `border` | `rgba(0,153,255,.28)` | Accent-tinted edge |
+| `border-soft` | `rgba(255,255,255,.1)` | Soft edge / footer rule |
+| `accent` | `#0099ff` | Links, focus, UNDONE case, filters |
+| `accent-cyan` | `#22d3ee` | GEMGEM case only |
+| `accent-violet` | `#a78bfa` | ItineraryEdge case optional only |
+| Primary CTA | `#fff` / `#000` | Email me |
+
+### Light (companion FINAL — pack invert)
+
+| Role | Value |
+| --- | --- |
+| `bg` | `#f4f6f9` |
+| `surface` | `#ffffff` |
+| `surface-lift` | `#e8ecf3` |
+| `fg` | `#0a0c10` |
+| `fg-2` | `#3a4050` |
+| `muted` | `#5c6578` |
+| `meta` | `#6b7385` |
+| `border` / `border-soft` | blue 35% / ink 10% |
+| Accents | keep `#0099ff`; deepen cyan/violet if used on light |
+| Primary CTA | `#0a0c10` / `#ffffff` |
+
+**Do not use:** multi-radial hero glows, backdrop-blur glass, rest-state shadow stacks, glow hovers, violet as global link/accent, 11px uppercase tracked eyebrows, red `#d92b21` as brand (superseded), Poppins as primary.
 
 ## Typography
 
-- **One family:** Poppins 400 / 600 (optional 500). No monospace outside real `<code>`.
-- Display ≤ **two lines** at every breakpoint; tracking slightly negative.
-- Body ≥ 16px (prefer 18px); captions ≥ 14px (never &lt; 13px).
-- Sentence case everywhere; no tiny uppercase tracked labels.
+- **Inter only** (display + body). Weight 500 for display/h2; 400 body; 500–600 UI.
+- Scale: 12 / 14 / 15 / 18 / 22 / 32 / 62 / 110 with h1 `clamp(48px, 9vw, 85px)` lh 0.9 tracking -0.05em.
+- Sentence case; no tiny tracked caps; no monospace chrome.
 
 ## Layout
 
-- Equal outer margins; max content width ~1024–1120px wrapper OK if column geometry inside stays quiet.
-- Section vertical gap ~96–140px.
-- Neighbouring sections must differ: hero split ≠ work ledger ≠ stacks surface band ≠ empty CTA ≠ quiet footer.
-- Phone: stack hero media above type; ledger full-bleed within margins; filter chips wrap with 44px targets.
+- Container max 1320px; gutters 48 / 32 / 24; nav 64 sticky flat.
+- Section padding 128 / 88 / 68.
+- Hero min-height `100svh - nav`; 2-col from 900px ~1.15 / 0.85.
+- Work cases: 11rem meta + main from 768px; radius 20.
+- Stacks mosaic: `auto-fill minmax(112px, 1fr)`.
+- Radii: 8 / 12 / 20 / pill.
 
-## Elevation
+## Elevation (legal)
 
 | Level | Treatment |
 | --- | --- |
-| 0 | Flat `ground` |
-| 1 | `surface` fill (tone step) |
-| 2 | `surface-2` fill |
-| Float | Shadows **only** on true overlays (none expected on this page) |
+| 0 | Flat `bg` |
+| 1 | `surface` |
+| 2 | `surface-lift` |
+| Edge | `border` / `border-soft` or 4px case accent bar |
+| Float | Shadows only on true overlays (none on page chrome) |
 
-No inset hairline rings for “card” chrome. No stacked marketing shadows.
+## Theme behaviour
+
+`prefers-color-scheme` default → `localStorage["lazehang-theme"]` override → `html[data-theme]`. FOUC inline script. Update `theme-color`. `prefers-reduced-motion` disables travel. Toggle in nav.
 
 ## Components
 
 ### Nav
 
-Wordmark + 3 links. Height ~56–64px. Ink links, underline on hover. Focus ring 2px ink.
+Wordmark · Work · Stacks · Resume pill (flat lift) · theme toggle. Sticky flat; no blur.
 
-### Headshot frame
+### Headshot
 
-Photo on `surface` pad 10–14px; radius 12px; grayscale; no blur; no gradient ring.
+`surface` pad 12px; radius 12; grayscale; caption “Based in Hong Kong”; no gradient ring; no raised shadow.
 
-### Button primary
+### Buttons
 
-`field-1` fill, 6px radius, ≥44px tall, pad ~12×24. Hover darken flatly. No shadow.
+Pill. Primary = field-1. Secondary = surface-lift + border-soft. No frosted blur.
 
-### Button / link secondary
+### Work case
 
-Ink text; underline hover; same focus ring.
+Meta (dates, role, side project) + media (owned 16:9 or tone pad) + title + bullets + chips. Case accent per project sparingly. Hover: surface-lift + flat edge.
 
-### SkillChip
+### Signature / mosaic / filters
 
-Pill; logo 16–20px `aria-hidden` + visible label; mono default; brand on hover/focus-visible; text fallback when no icon.
+Signature strip + mosaic tiles; filters with pressed inversion. **Mono → brand** on logo hover/focus (product lock).
 
-### Work ledger entry
+### Closing / footer
 
-Name · kind · dates on one line; bullets; chips. Space between entries, not borders.
-
-### Stack group filter
-
-Text controls; active gets `accent` underline or `surface-2` fill (pick one pattern site-wide). Hash fallbacks `#stacks-frontend` etc.
-
-### Closing CTA
-
-No bordered panel. Sentence + Email me (+ Resume link).
-
-### Footer
-
-One line: identity · LinkedIn · GitHub · year · image credits if any.
+Display-scale closing sentence + two buttons. Footer split: identity © 2026 · links.
 
 ## Imagery
 
-1. Own headshot (required).
-2. Optional credited Hong Kong harbour/street stills (CC BY / BY-SA) — atmosphere only; never presented as project screenshots.
-3. Optional stacks mood JPG under flat surface (drop if contrast fails).
-4. OG share image already in static.
+1. Owned headshot required.  
+2. Work media only if already owned in repo — else tone pad.  
+3. No fabricated campaign/jewelry/watch shots as proof.  
+4. OG unchanged.
 
 ## Accessibility
 
-- Visible focus on every control.
-- Colour contrast ≥ 4.5:1 for text (`ink`/`muted` on `ground`/`surface`).
-- `prefers-reduced-motion`: no travel; keep opacity snaps.
-- Logos never logo-only; decorative SVGs `aria-hidden`.
+Visible focus (accent ring); contrast ≥4.5:1 both themes; keyboard toggle; `aria-hidden` on decorative SVGs; reduced motion.
 
-## Do
+## Content locks
 
-- Keep hiring facts exact (GEMGEM through October 2026, etc.).
-- Keep `/stacks` → `/#stacks`.
-- Prefer scale and full content over ornament after removing PR #4 chrome.
-
-## Don’t
-
-- Invent metrics, quotes, logos, or project screenshots.
-- Reintroduce gradients, rest shadows, indigo primary, glass nav, or icon-feature card grids.
-- Ship proprietary third-party brand fonts or trademarked wordmarks as site chrome.
+GEMGEM through October 2026; mailto:lazehang@gmail.com; headshot-primary; stacks on home; `/stacks` → `/#stacks`; no fabricated claims; no DNS; Gatsby 5 / React 18 / Tailwind 3 / yarn.
 
 ## Adaptation notes
 
-| Source | Kept | Discarded |
+| Source | Kept | Discarded / legalized |
 | --- | --- | --- |
-| Vercel DESIGN.md | Ink/canvas roles, black CTA, sentence-case display, calm section rhythm | Mesh gradients, mono eyebrows, elevation shadow stacks, Geist |
-| Cal DESIGN.md | White SaaS calm, soft surface fills, category-tab → stack filter idea, dark footer optional | Cal Sans requirement, blue accent, pastel badges, product-mockup card grids |
-| quiet-instrument sheet | Column restraint, ledger + two-ended list + plain CTA + quiet footer, signal palette roles | Midline film hero; two-doors hero; hover project photo preview without assets |
+| Open Design artifact | Composition, dark tokens, Inter, blue accent, cases, signature+mosaic, CTA/footer | Radial glows, glass blur, rest shadows, glow hover, tracked eyebrow, unloaded GT/Azeret files, unowned work bitmaps |
+| Capture-pack light invert | Near-white page, white cards, near-black text, flipped primary | Hero glows on light |
+| quiet-instrument PR #5 | IA, content locks, mono→brand chips, headshot-primary | Light-only red Poppins system as primary direction |
+
+## Don’t
+
+- Ship GT Walsheim / Azeret without license.  
+- Reintroduce gradients, glass, rest shadows, violet page primary.  
+- Invent project screenshots or metrics.  
+- Major stack upgrades.

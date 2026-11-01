@@ -14,6 +14,7 @@ export const skillLabelToSlug = {
     AWS: 'amazonaws',
     Docker: 'docker',
     'GitHub Actions': 'githubactions',
+    Cloudflare: 'cloudflare',
     'Cloudflare CDN': 'cloudflare',
     Vite: 'vite',
     Webpack: 'webpack',
