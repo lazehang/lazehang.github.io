@@ -1,3 +1,4 @@
+const fs = require(`fs`)
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -113,4 +114,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String
     }
   `)
+}
+
+/** Expose generated urlset at /sitemap.xml (robots.txt + llms.txt point here). */
+exports.onPostBuild = ({ reporter }) => {
+    const publicDir = path.join(__dirname, `public`)
+    const sitemapChunk = path.join(publicDir, `sitemap-0.xml`)
+    const sitemapAlias = path.join(publicDir, `sitemap.xml`)
+
+    if (fs.existsSync(sitemapChunk)) {
+        fs.copyFileSync(sitemapChunk, sitemapAlias)
+        reporter.info(`SEO: copied sitemap-0.xml → sitemap.xml`)
+    } else {
+        reporter.warn(`SEO: sitemap-0.xml missing; /sitemap.xml not created`)
+    }
 }

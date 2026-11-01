@@ -60,12 +60,13 @@ const BlogPostTemplate = ({ data, location }) => {
 
 export default BlogPostTemplate
 
-export const Head = ({ data }) => {
+export const Head = ({ data, location }) => {
     const post = data.markdownRemark
     return (
         <Seo
             title={post.frontmatter.title}
             description={post.frontmatter.description || post.excerpt}
+            pathname={location.pathname}
         />
     )
 }

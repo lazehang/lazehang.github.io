@@ -7,6 +7,7 @@ import Projects from '../components/projects'
 import StacksSection from '../components/stacksSection'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+import { homeStructuredData } from '../utils/homeStructuredData'
 
 const Index = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -21,7 +22,23 @@ const Index = ({ data, location }) => {
     )
 }
 
-export const Head = () => <Seo home />
+export const Head = ({ data, location }) => {
+    const meta = data.site.siteMetadata
+    const jobTitle = 'full-stack developer'
+    const jsonLd = homeStructuredData({
+        siteUrl: meta.siteUrl,
+        description: meta.description,
+        authorName: meta.author?.name,
+        jobTitle
+    })
+
+    return (
+        <>
+            <Seo home pathname={location.pathname} />
+            <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        </>
+    )
+}
 
 export default Index
 
@@ -30,6 +47,11 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
                 title
+                siteUrl
+                description
+                author {
+                    name
+                }
             }
         }
         allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
