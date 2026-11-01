@@ -1,0 +1,8 @@
+/* Single regular master — 500/600 render via font synthesis to cut throttled network RTTs. */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
+}
