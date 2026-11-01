@@ -141,7 +141,7 @@ Wordmark · Work · Stacks · Resume pill (flat lift) · theme toggle. Sticky fl
 
 ### Headshot
 
-No surface card / border; **1:1** grayscale headshot with CSS **mask edge-fade to transparent** over `--ground` (both themes); square media corners; display ~300px mobile / ~480px desktop; caption “Based in Hong Kong” in `--muted`; no glass, rest shadow, or glow.
+No surface card / border; **1:1** cutout PNG with alpha (edge dissolve via transparency, not CSS mask) over `--ground` (both themes); square media corners; display ~300px mobile / ~480px desktop; caption “Based in Hong Kong” in `--muted`; no glass, rest shadow, or glow.
 
 ### Buttons
 
