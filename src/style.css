@@ -110,6 +110,7 @@ html[data-theme='dark'] {
 }
 
 html[data-theme='light'] {
+    /* #0077b3 on #f4f6f9 meets WCAG AA for normal text links */
     color-scheme: light;
     --bg: #f4f6f9;
     --ground: var(--bg);
@@ -123,14 +124,14 @@ html[data-theme='light'] {
     --meta: #6b7385;
     --border: rgba(0, 153, 255, 0.35);
     --border-soft: rgba(10, 12, 16, 0.1);
-    --accent: #0099ff;
+    --accent: #0077b3;
     --accent-cyan: #0891b2;
     --accent-violet: #7c3aed;
     --accent-on: #ffffff;
     --accent-ink: var(--accent-on);
     --field-1: #0a0c10;
     --field-1-ink: #ffffff;
-    --focus-ring: #0099ff;
+    --focus-ring: #0077b3;
     --focus-ring-offset: var(--bg);
     --theme-color-meta: #f4f6f9;
 }
@@ -346,6 +347,16 @@ blockquote {
     gap: var(--space-8);
     width: 100%;
     align-items: center;
+}
+
+@media (max-width: 899px) {
+    .hero-grid__media {
+        order: 1;
+    }
+
+    .hero-grid__copy {
+        order: 2;
+    }
 }
 
 @media (min-width: 900px) {

@@ -1,5 +1,6 @@
 // normalize CSS across browsers
 import './src/normalize.css'
+import './src/assets/scss/fonts.scss'
 import './src/assets/scss/app.scss'
 // custom CSS styles
 import './src/style.css'

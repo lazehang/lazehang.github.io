@@ -162,29 +162,7 @@ module.exports = {
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
         {
-            resolve: `gatsby-plugin-google-fonts-v2`,
-            options: {
-                fonts: [
-                    {
-                        family: `Inter:wght@400;500;600;700`
-                    }
-                ]
-            }
-        },
-        {
-            resolve: 'gatsby-plugin-google-tagmanager',
-            options: {
-                id: 'GTM-KP5ZTGH',
-
-                // Include GTM in development.
-                //
-                // Defaults to false meaning GTM will only be loaded in production.
-                includeInDevelopment: false,
-
-                defaultDataLayer: { platform: 'gatsby' },
-
-                enableWebVitalsTracking: true
-            }
+            resolve: `${__dirname}/plugins/gatsby-plugin-deferred-gtm`,
         },
         {
             resolve: 'gatsby-plugin-sitemap'
