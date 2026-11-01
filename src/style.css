@@ -107,6 +107,12 @@ html[data-theme='dark'] {
     --focus-ring: #0099ff;
     --focus-ring-offset: var(--bg);
     --theme-color-meta: #05070d;
+    --hero-gradient: linear-gradient(
+        165deg,
+        var(--surface) 0%,
+        var(--ground) 52%,
+        var(--ground) 100%
+    );
 }
 
 html[data-theme='light'] {
@@ -134,6 +140,12 @@ html[data-theme='light'] {
     --focus-ring: #0077b3;
     --focus-ring-offset: var(--bg);
     --theme-color-meta: #f4f6f9;
+    --hero-gradient: linear-gradient(
+        165deg,
+        var(--surface) 0%,
+        var(--ground) 55%,
+        var(--ground) 100%
+    );
 }
 
 *,
@@ -323,15 +335,41 @@ blockquote {
     min-width: 44px;
     min-height: 44px;
     padding: 0;
-    border: none;
-    background: transparent;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    background: var(--surface-lift);
     color: var(--ink);
     cursor: pointer;
-    border-radius: var(--radius-sm);
+    transition: background var(--motion-fast) var(--ease-standard),
+        border-color var(--motion-fast) var(--ease-standard);
+}
+
+.theme-toggle svg {
+    display: block;
+    color: var(--ink);
+    flex-shrink: 0;
 }
 
 .theme-toggle:hover {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+html[data-theme='light'] .theme-toggle {
+    background: var(--surface);
+    border-color: var(--border-soft);
+    color: var(--ink);
+}
+
+html[data-theme='dark'] .theme-toggle {
     background: var(--surface-lift);
+    border-color: var(--border-soft);
+    color: var(--ink);
 }
 
 /* Hero */
@@ -340,6 +378,10 @@ blockquote {
     display: flex;
     align-items: center;
     padding-block: var(--space-8);
+    background-color: var(--ground);
+    background-image: var(--hero-gradient);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .hero-section.section-enter {

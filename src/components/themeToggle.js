@@ -22,7 +22,9 @@ export default function ThemeToggle() {
     const [theme, setTheme] = React.useState('dark')
 
     React.useEffect(() => {
-        const initial = getPreferredTheme()
+        const fromDom = document.documentElement.getAttribute('data-theme')
+        const initial =
+            fromDom === 'light' || fromDom === 'dark' ? fromDom : getPreferredTheme()
         setTheme(initial)
         applyTheme(initial)
     }, [])
